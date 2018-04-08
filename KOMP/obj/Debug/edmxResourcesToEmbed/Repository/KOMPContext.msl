@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBKOMPModelStoreContainer" CdmEntityContainer="DBKOMPEntities">
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="DBKOMPModel.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TrnChrg" ColumnName="TrnChrg" />
+          <ScalarProperty Name="DeliveryChrg" ColumnName="DeliveryChrg" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="CashPickUp" ColumnName="CashPickUp" />
+          <ScalarProperty Name="CashPickUpPercent" ColumnName="CashPickUpPercent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoliDays">
+      <EntityTypeMapping TypeName="DBKOMPModel.HoliDay">
+        <MappingFragment StoreEntitySet="HoliDay">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DeliverDate" ColumnName="DeliverDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="DBKOMPModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="ShowInBoth" ColumnName="ShowInBoth" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="HeaderCus" ColumnName="HeaderCus" />
+          <ScalarProperty Name="DetailCus" ColumnName="DetailCus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuItems">
+      <EntityTypeMapping TypeName="DBKOMPModel.MenuItem">
+        <MappingFragment StoreEntitySet="MenuItems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="PicDetails" ColumnName="PicDetails" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Veg" ColumnName="Veg" />
+          <ScalarProperty Name="NonCustomized" ColumnName="NonCustomized" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AvailableDay" ColumnName="AvailableDay" />
+          <ScalarProperty Name="ShowDetails" ColumnName="ShowDetails" />
+          <ScalarProperty Name="Varity" ColumnName="Varity" />
+          <ScalarProperty Name="DetailDinner" ColumnName="DetailDinner" />
+          <ScalarProperty Name="ShowInBoth" ColumnName="ShowInBoth" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="OrderBy" ColumnName="OrderBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="DBKOMPModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="touser" ColumnName="touser" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="message1" ColumnName="message" />
+          <ScalarProperty Name="propertyId" ColumnName="propertyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="DBKOMPModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PlanId" ColumnName="PlanId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderStartDate" ColumnName="OrderStartDate" />
+          <ScalarProperty Name="PaymentDone" ColumnName="PaymentDone" />
+          <ScalarProperty Name="IsLunch" ColumnName="IsLunch" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="NonCustomized" ColumnName="NonCustomized" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="YourguyOrderId" ColumnName="YourguyOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="DBKOMPModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="SubProductId" ColumnName="SubProductId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DeliverDate" ColumnName="DeliverDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="YourguyOrderId" ColumnName="YourguyOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="DBKOMPModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TrnChrg" ColumnName="TrnChrg" />
+          <ScalarProperty Name="DeliveryChrg" ColumnName="DeliveryChrg" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="GSTCharges" ColumnName="GSTCharges" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="DBKOMPModel.Plan">
+        <MappingFragment StoreEntitySet="Plan">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DaysInPlan" ColumnName="DaysInPlan" />
+          <ScalarProperty Name="ValidUpTo" ColumnName="ValidUpTo" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DeliveryCharges" ColumnName="DeliveryCharges" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NightDeliveryCharges" ColumnName="NightDeliveryCharges" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShippingBillings">
+      <EntityTypeMapping TypeName="DBKOMPModel.ShippingBilling">
+        <MappingFragment StoreEntitySet="ShippingBilling">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="FirstNameB" ColumnName="FirstNameB" />
+          <ScalarProperty Name="LastNameB" ColumnName="LastNameB" />
+          <ScalarProperty Name="mobileB" ColumnName="mobileB" />
+          <ScalarProperty Name="CompanyNameB" ColumnName="CompanyNameB" />
+          <ScalarProperty Name="AddressB" ColumnName="AddressB" />
+          <ScalarProperty Name="CityB" ColumnName="CityB" />
+          <ScalarProperty Name="LandMarkB" ColumnName="LandMarkB" />
+          <ScalarProperty Name="PincodeB" ColumnName="PincodeB" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StateB" ColumnName="StateB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocations">
+      <EntityTypeMapping TypeName="DBKOMPModel.tblLocation">
+        <MappingFragment StoreEntitySet="tblLocation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CityDivisionID" ColumnName="CityDivisionID" />
+          <ScalarProperty Name="primeLocation" ColumnName="primeLocation" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DBKOMPModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="UserLoginID" ColumnName="UserLoginID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="WorkingSince" ColumnName="WorkingSince" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="STDCode" ColumnName="STDCode" />
+          <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+          <ScalarProperty Name="WebsiteLink" ColumnName="WebsiteLink" />
+          <ScalarProperty Name="SocialLink" ColumnName="SocialLink" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AboutUs" ColumnName="AboutUs" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="LandLine1" ColumnName="LandLine1" />
+          <ScalarProperty Name="LandLine2" ColumnName="LandLine2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeeklyMenus">
+      <EntityTypeMapping TypeName="DBKOMPModel.WeeklyMenu">
+        <MappingFragment StoreEntitySet="WeeklyMenu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+          <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ShowIn" ColumnName="ShowIn" />
+          <ScalarProperty Name="MenuItm" ColumnName="MenuItm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="DBKOMPModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="YourGuyChkPickUP" ColumnName="YourGuyChkPickUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBKOMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrnChrg" Type="int" />
+    <Property Name="DeliveryChrg" Type="int" />
+    <Property Name="Tax" Type="decimal" Precision="4" Scale="1" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="60" />
+    <Property Name="CashPickUp" Type="int" />
+    <Property Name="CashPickUpPercent" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="HoliDay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeliverDate" Type="datetime" />
+    <Property Name="IsActive" Type="int" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="250" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ShowInBoth" Type="varchar" MaxLength="1" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="Picture" Type="varchar" MaxLength="150" />
+    <Property Name="HeaderCus" Type="nvarchar" MaxLength="250" />
+    <Property Name="DetailCus" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="MenuItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="250" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Picture" Type="varchar" MaxLength="150" />
+    <Property Name="PicDetails" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Veg" Type="int" Nullable="false" />
+    <Property Name="NonCustomized" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="AvailableDay" Type="varchar" MaxLength="20" />
+    <Property Name="ShowDetails" Type="int" />
+    <Property Name="Varity" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DetailDinner" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ShowInBoth" Type="varchar" MaxLength="1" />
+    <Property Name="Calories" Type="varchar" MaxLength="50" />
+    <Property Name="OrderBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="mobile" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="touser" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="message" Type="varchar" MaxLength="500" />
+    <Property Name="propertyId" Type="int" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="PlanId" Type="int" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="OrderStartDate" Type="datetime" />
+    <Property Name="PaymentDone" Type="int" Nullable="false" />
+    <Property Name="IsLunch" Type="int" Nullable="false" />
+    <Property Name="TotalPayment" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="NonCustomized" Type="int" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="RequestId" Type="int" />
+    <Property Name="pincode" Type="int" />
+    <Property Name="YourguyOrderId" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="SubProductId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="DeliverDate" Type="datetime" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="YourguyOrderId" Type="int" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="TransactionNo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Mode" Type="int" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="NameOnCard" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="CardNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="TrnChrg" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DeliveryChrg" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Bank" Type="varchar" MaxLength="100" />
+    <Property Name="Branch" Type="varchar" MaxLength="100" />
+    <Property Name="ChequeNo" Type="varchar" MaxLength="100" />
+    <Property Name="Comments" Type="varchar" MaxLength="100" />
+    <Property Name="GSTCharges" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DaysInPlan" Type="int" />
+    <Property Name="ValidUpTo" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="DeliveryCharges" Type="int" />
+    <Property Name="Discount" Type="decimal" Precision="3" Scale="2" />
+    <Property Name="NightDeliveryCharges" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKOMP.dbo.Request' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="YourGuyChkPickUP" Type="int" />
+  </EntityType>
+  <EntityType Name="ShippingBilling">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="FirstName" Type="varchar" MaxLength="60" />
+    <Property Name="LastName" Type="varchar" MaxLength="60" />
+    <Property Name="mobile" Type="varchar" MaxLength="15" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="LandMark" Type="varchar" MaxLength="50" />
+    <Property Name="Pincode" Type="varchar" MaxLength="10" />
+    <Property Name="FirstNameB" Type="varchar" MaxLength="60" />
+    <Property Name="LastNameB" Type="varchar" MaxLength="60" />
+    <Property Name="mobileB" Type="varchar" MaxLength="15" />
+    <Property Name="CompanyNameB" Type="varchar" MaxLength="100" />
+    <Property Name="AddressB" Type="varchar" MaxLength="200" />
+    <Property Name="CityB" Type="varchar" MaxLength="50" />
+    <Property Name="LandMarkB" Type="varchar" MaxLength="50" />
+    <Property Name="PincodeB" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="RequestId" Type="int" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="StateB" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblLocation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="100" />
+    <Property Name="CityDivisionID" Type="int" />
+    <Property Name="primeLocation" Type="int" />
+    <Property Name="pincode" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="60" />
+    <Property Name="LastName" Type="varchar" MaxLength="60" />
+    <Property Name="email" Type="varchar" MaxLength="60" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="UserLoginID" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="mobile" Type="varchar" MaxLength="15" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="WorkingSince" Type="int" />
+    <Property Name="picture" Type="varchar" MaxLength="110" />
+    <Property Name="STDCode" Type="varchar" MaxLength="5" />
+    <Property Name="LandLine" Type="varchar" MaxLength="15" />
+    <Property Name="WebsiteLink" Type="varchar" MaxLength="150" />
+    <Property Name="SocialLink" Type="varchar" MaxLength="150" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="AboutUs" Type="varchar" MaxLength="500" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+    <Property Name="CompanyLogo" Type="varchar" MaxLength="100" />
+    <Property Name="LandLine1" Type="varchar" MaxLength="15" />
+    <Property Name="LandLine2" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="WeeklyMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sunday" Type="varchar" MaxLength="200" />
+    <Property Name="Monday" Type="varchar" MaxLength="200" />
+    <Property Name="Tuesday" Type="varchar" MaxLength="200" />
+    <Property Name="Wednesday" Type="varchar" MaxLength="200" />
+    <Property Name="Thursday" Type="varchar" MaxLength="200" />
+    <Property Name="Friday" Type="varchar" MaxLength="200" />
+    <Property Name="Saturday" Type="varchar" MaxLength="200" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="ShowIn" Type="varchar" MaxLength="2" />
+    <Property Name="MenuItm" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityContainer Name="DBKOMPModelStoreContainer">
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoliDay" EntityType="Self.HoliDay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuItems" EntityType="Self.MenuItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShippingBilling" EntityType="Self.ShippingBilling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLocation" EntityType="Self.tblLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeeklyMenu" EntityType="Self.WeeklyMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Request].[Id] AS [Id], 
+[Request].[UserId] AS [UserId], 
+[Request].[CreatedDate] AS [CreatedDate], 
+[Request].[CreatedBy] AS [CreatedBy], 
+[Request].[YourGuyChkPickUP] AS [YourGuyChkPickUP]
+FROM [dbo].[Request] AS [Request]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
