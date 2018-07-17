@@ -1,0 +1,24 @@
+﻿.field-validation-error,.validation-summary-errors {
+    color:red;
+}
+.validation-summary-errors ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.panel-green {
+    border-color: #5cb85c;
+}
+.panel-green > .panel-heading {
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #428bca;
+}
+#page-wrapper { 
+    margin: 25px 0 0 0;
+}
+.huge {
+    font-size: 40px;
+}
+.form-inline .form-group{
+    margin-bottom: 10px;
+}
